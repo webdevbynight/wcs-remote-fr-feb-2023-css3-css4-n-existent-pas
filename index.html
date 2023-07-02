@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>From pixel to rem</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/vb.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="entry-slide">
+					<h1>CSS 3 et CSS 4 n’existent pas</h1>
+					<p>Une <span lang="en">masterclass</span> par <a href="https://victor-brito.dev">Victor Brito</a> pendant la formation développeur web et web mobile à la <a href="https://www.wildcodeschool.com/fr-FR"><span lang="en">Wild Code School</span></a> <span class="promotion">(promotion <span lang="en">remote</span> février 2023)</span></p>
+				</section>
+				<section id="slides-link">
+					<h2>Lien vers les <span lang="en">slides</span></h2>
+					<p><a href="https://webdevbynight.github.io/wcs-remote-fr-feb-2023-css3-css4-n-existent-pas/">https://webdevbynight.github.io/wcs-remote-fr-feb-2023-css3-css4-n-existent-pas/</a></p>
+				</section>
+				<section id="humour">
+					<h2>Ceci n’est pas un complot facile pour briller en société</h2>
+					<p>
+						<img src="images/Fupt-w7WYAImSeQ.jpeg" alt="Planche humoristique mettant en scène la contestation du théorème de Pythagore énoncée par un professeur par ses élèves" height="200">
+					</p>
+					<p>#IlsCroiventNousSachons</p>
+				</section>
+				<section id="w3c-standards-process">
+					<h2>Processus de standardisation au W3C</h2>
+					<ol>
+						<li class="fragment">Idée</li>
+						<li class="fragment"><span lang="en">Editor’s Draft</span> (ED)</li>
+						<li class="fragment">
+							<span lang="en">Working Draft</span> (WD)
+							<ul>
+								<li class="fragment"><span lang="en">First Public Working Draft</span> (FPWD)</li>
+								<li class="fragment">Un ou plusieurs brouillons successifs possibles</li>
+								<li class="fragment"><span lang="en">Last Call Working Draft</span> (LCWD)</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							<span lang="en">Candidate Recommendation</span> (CR)
+							<ul>
+								<li class="fragment">Plusieurs CR possibles</li>
+								<li class="fragment">Possibilité de retour au stade WD</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							<span lang="en">Proposed Recommendation</span> (PR)
+							<ul>
+								<li class="fragment">Possibilité de retour au stade CR</li>
+							</ul>
+						</li>
+						<li class="fragment"><span lang="en">Recommendation</span> (REC)</li>
+					</ol>
+				</section>
+				<section>
+					<section id="css-history">
+						<h2>Histoire des CSS</h2>
+						<p class="fragment">Version majeure = niveau (<span lang="en">level</span>)</p>
+						<p class="fragment">Version mineure = révision (<span lang="en">revision</span>)</p>
+						<p class="fragment">Version corrective = document revu avec changements et erreurs listés (<span lang="en">revised</span>)</p>
+					</section>
+					<section id="css1">
+						<h3>CSS, niveau 1</h3>
+						<ul class="fragment">
+							<li>Idée&nbsp;: 10 octobre 1994</li>
+							<li>REC&nbsp;: 17 décembre 1996 (revue (<span lang="en">revised</span>) les 11 janvier 1999 et 11 avril 2008)</li>
+							<li>Spec remplacée (<span lang="en">superseded</span>)&nbsp;: 13 septembre 2018</li>
+						</ul>
+						<pre class="fragment">
+							<code class="language-css" data-trim>
+display: block;
+display: inline;
+display: list-item;
+display: none;
+							</code>
+						</pre>
+					</section>
+					<section id="css2">
+						<h3>CSS, niveau 2</h3>
+						<ul class="fragment">
+							<li>WD&nbsp;: 4 novembre 1997</li>
+							<li>WD&nbsp;: 28 janvier 1998</li>
+							<li>PR&nbsp;: 24 mars 1998</li>
+							<li>REC&nbsp;: 12 mai 1998 (revue (<span lang="en">revised</span>) le 11 avril 2008)</li>
+						</ul>
+						<pre class="fragment">
+							<code class="language-css" data-trim>
+display: run-in;
+display: compact;
+display: marker;
+display: table;
+display: inline-table;
+display: table-caption;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-row-group;
+display: table-column;
+display: table-column-group;
+display: table-cell;
+display: inherit;
+							</code>
+						</pre>
+					</section>
+					<section id="css21">
+						<h3>CSS, niveau 2, révision 1</h3>
+						<ul class="fragment">
+							<li>WD&nbsp;: 2 août 2002</li>
+							<li>WD&nbsp;: 28 janvier 2003</li>
+							<li>WD&nbsp;: 15 septembre 2003</li>
+							<li>CR&nbsp;: 25 février 2004</li>
+							<li>WD&nbsp;: 13 juin 2005</li>
+							<li>WD&nbsp;: 11 avril 2006</li>
+							<li>WD&nbsp;: 6 novembre 2006</li>
+							<li>CR&nbsp;: 19 juillet 2007</li>
+							<li>CR&nbsp;: 23 avril 2009</li>
+							<li>CR&nbsp;: 8 septembre 2009</li>
+							<li>WD&nbsp;: 7 décembre 2010</li>
+							<li>PR&nbsp;: 12 avril 2011</li>
+							<li>REC&nbsp;: 7 juin 2011 (éditée (<span lang="en">edited in place</span>) les 12 avril 2016 et 7 décembre 2021)</li>
+						</ul>
+					</section>
+					<section id="css21-next">
+						<h3>CSS, niveau 2, révision 1</h3>
+						<pre>
+							<code class="language-css" data-trim>
+color: orange;
+							</code>
+						</pre>
+					</section>
+					<section id="css22">
+						<h3>CSS, niveau 2, révision 2</h3>
+						<ul class="fragment">
+							<li>FPWD&nbsp;: 12 avril 2016</li>
+						</ul>
+					</section>
+					<section id="monolithic-css">
+						<h3>Points communs de CSS 1, 2, 2.1 et 2.2</h3>
+						<ul>
+							<li class="fragment">Specs monolithiques</li>
+							<li class="fragment">Toutes les fonctionnalités réunies dans un même document</li>
+							<li class="fragment">Difficiles à maintenir</li>
+							<li class="fragment">Rythme de développement lent</li>
+						</ul>
+					</section>
+					<section id="modularised-css">
+						<h3>Évolution après CSS 2</h3>
+						<ul>
+							<li class="fragment">Découpage de CSS en modules</li>
+							<li class="fragment">Les modules évoluent indépendamment les uns les autres</li>
+						</ul>
+					</section>
+					<section id="level-numbering">
+						<h3>Numérotation du niveau des modules</h3>
+						<ul>
+							<li class="fragment">Modules couvrant des fonctionnalités existantes en CSS 2.1 (sélecteurs, <span lang="en">media queries</span>)&nbsp;: <strong class="fragment">niveau 3</strong></li>
+							<li class="fragment">Modules couvrant des fonctionnalités complètement nouvelles (<span lang="en">flexbox</span>, <span lang="en">grid layout</span>)&nbsp;: <strong class="fragment">niveau 1</strong></li>
+						</ul>
+					</section>
+				</section>
+				<section id="css-terminology">
+					<h2>Parler de CSS 3, et encore plus de CSS 4, est un abus de langage</h2>
+					<p class="fragment">Plutôt parler de CSS, tout court</p>
+					<p class="fragment">Plutôt réserver les numéros aux niveaux des modules</p>
+					<p class="fragment">Les modules évoluent chacun à leur propre rythme&nbsp;: difficile de leur donner un numéro les englobant tous</p>
+					<pre class="fragment">
+						<code class="language-css" data-trim>
+.reset {
+	all: initial; /* CSS (tout court), niveau 5 du module Cascading and Inheritance */
+}
+.element {
+	display: grid; /* CSS (tout court), niveau 3 du module Display */
+	grid-template-columns: repeat(2, 1fr); /* CSS (tout court), niveau 2 du module Grid Layout */
+	gap: 20px; /* CSS (tout court), niveau 3 du module Box Alignment */
+}
+@media (width >= 768px) { /* CSS (tout court), niveau 4 du module Media Queries */
+	body {
+		min-height: 100dvh; /* CSS (tout court), niveau 4 du module Values and Units */
+	}
+}
+@scope (.dark-theme) { /* CSS (tout court), niveau 6 du module Cascading and Inheritance */
+	a {
+		color: plum;
+	}
+}
+						</code>
+					</pre>
+				</section>
+				<section id="links">
+					<h2>Quelques liens</h2>
+					<ul>
+						<li><a href="https://www.w3.org/2023/Process-20230612/" lang="en" hreflang="en">W3C Process Document</a></li>
+						<li><a href="https://css-tricks.com/css-standards-process/" lang="en" hreflang="en">The CSS Standards Process</a></li>
+						<li><a href="https://rachelandrew.co.uk/archives/2016/09/13/why-there-is-no-css4-explaining-css-levels/" lang="en" hreflang="en">Why There Is No CSS4 – Explaining CSS Levels</a></li>
+						<li><a href="https://www.xanthir.com/b4Ko0" lang="en" hreflang="en">A Word About CSS4</a></li>
+					</ul>
+				</section>
+				<section id="thanks">
+					<h2>Merci</h2>
+					<p>Des questions&nbsp;?</p>
+					<div class="credits">
+						<h3>Crédits</h3>
+						<ul>
+							<li><a href="https://twitter.com/complotsfaciles/status/1651461501104926722">https://twitter.com/complotsfaciles/status/1651461501104926722</a></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
